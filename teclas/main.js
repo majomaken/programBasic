@@ -4,12 +4,34 @@ let keys = {
     LEFT: 37,
     RIGTH: 39
 };
-document.addEventListener("keyup", dibujarTeclado);
-
+// ver en casa -->>> https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=842:lista-de-eventos-javascript-on-click-dblclick-mouseover-mouseout-change-submit-keypress-cu01159e&catid=78&Itemid=206
+// document.addEventListener("onmouseenter", dibujarTeclado);
 let canvas = document.getElementById("area_de_dibujo");
 let paper = canvas.getContext("2d");
 let x = 150;
 let y = 150;
+
+let click = document.addEventListener("onclick", canvas);
+let doble = document.addEventListener("ondblclick",canvas);
+let doonmousedownble = document.addEventListener("onmousedown", canvas);
+let onmouseenter = document.addEventListener("onmouseenter",canvas);
+let onmouseleave = document.addEventListener("onmouseleave",canvas);
+let onmousemove = document.addEventListener("onmousemove",canvas);
+let onmouseover = document.addEventListener("onmouseover",canvas);11
+let onmouseout = document.addEventListener("onmouseout",canvas);
+let onmouseup = document.addEventListener("onmouseup",canvas);
+let contextmenu = document.addEventListener("contextmenu",canvas);
+
+console.log(click);
+console.log(doble);
+console.log(doonmousedownble);
+console.log(onmouseenter);
+console.log(onmouseleave);
+console.log(onmousemove);
+console.log(onmouseover);
+console.log(onmouseout);
+console.log(onmouseup);
+console.log(contextmenu);
 
 dibujarLinea("red", 149, 149, 151, 151, paper);
 
@@ -28,25 +50,14 @@ dibujarLinea("red", 149, 149, 151, 151, paper);
   {
     let colorcito = "blue";
     let move = 10;
+    if (canvas.click = true)
+    {
+      console.log(canvas.click);
+      dibujarLinea(colorcito, x, y, x, y + 10, paper);
 
-    switch (evento.keyCode)
-     {
-      case keys.UP:
-        dibujarLinea(colorcito, x, y, x, y - move, paper);
-        y = y - move;
-      break;
-      case keys.DOWN:
-        dibujarLinea(colorcito, x, y, x, y + move, paper);
-        y = y + move;
-      break;
-      case keys.LEFT:
-        dibujarLinea(colorcito, x, y, x - move, y, paper);
-        x = x - move;
-      break;
-      case keys.RIGTH:
-        dibujarLinea(colorcito, x, y, x + move, y, paper);
-        x = x + move;
-      break;
     }
+
+
+
 
   };
